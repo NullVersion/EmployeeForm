@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Form</title>
+  <script>
+    //toggle for form & badge
+    $(".js-switch").click(function () {
+      $(".main-content").toggleClass("as-card");
+    });
+
+
+    //code for image preview
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $("#imager").attr("src", e.target.result);
+    };
+
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        $("#imager").css("visibility", 'visible');
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#image-input").change(function () {
+      readURL(this);
+    });
+
+  </script>
+</head>
+
+<body>
+  <div class="main-content printed">
+    <div class="header"> <span>Employee Information Form</span><span>Your Conference Badge</span></div>
+    <div class="id__wrapper">
+      <div class="deco"></div>
+      <label class="your-face" id="image-form" for="image-input">
+        <input type="file" id="image-input" />
+        <div class="image-persuader">Upload Image Here</div><img id="imager" src="#" alt="Your Image Here" />
+      </label>
+      <div class="name">
+        <label>Full Name</label>
+        <textarea class="full"></textarea>
+      </div>
+      <div class="job">
+        <label>Job Title</label>
+        <input class="full" />
+      </div>
+      <div class="country">
+        <label>Location</label>
+        <input class="full" />
+      </div>
+      <div class="twitter">
+        <label>Twitter</label>
+        <input class="full" value="@" />
+      </div>
+      <div class="codepen">
+        <label>Codepen</label>
+        <input class="full" value="@" />
+      </div>
+      <div class="blood">
+        <label>Your Expertise</label>
+        <div class="checkbox__wrapper">
+          <div class="checkbox">
+            <input id="design" type="checkbox" value="1" checked="checked" />
+            <label class="label-check" for="design">Design</label>
+          </div>
+          <div class="checkbox">
+            <input id="front-end" type="checkbox" value="2" />
+            <label class="label-check" for="front-end">Front-end Dev</label>
+          </div>
+          <div class="checkbox">
+            <input id="product" type="checkbox" value="3" />
+            <label class="label-check" for="product">Product</label>
+          </div>
+          <div class="checkbox">
+            <input id="other" type="checkbox" value="4" />
+            <label class="label-check" for="other">Other</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="context">
+    <div class="explanation">
+      <div class="js-switch">Click me</div>
+</body>
+
+</html>

@@ -1,391 +1,400 @@
- .prefix {
-     margin-right: -10px;
-     position: absolute;
+* {
+  box-sizing: border-box;
 }
- .my-input {
-     padding-left: 5px;
+
+body {
+  background: #f6f6f6;
+  font-family: "Prompt", sans-serif;
+  overflow-x: hidden;
 }
- body {
-     background: #0d0d0d;
-     color: white;
+
+aside.context {
+  text-align: center;
+  color: #333;
+  line-height: 1.7;
 }
- input[type=radio] {
-     border: 1px solid #fff;
-     padding: 0.5em;
-     -webkit-appearance: none;
+aside.context a {
+  text-decoration: none;
+  color: #333;
+  padding: 3px 0;
+  border-bottom: 1px dashed;
 }
- input[type=radio]:checked {
-     /*background: url() no-repeat center center;*/
-     background-size: 9px 9px;
+aside.context a:hover {
+  border-bottom: 1px solid;
 }
- input[type=radio]:focus {
-     outline-color: transparent;
+aside.context .explanation {
+  max-width: 700px;
+  margin: 2em auto 0;
 }
- body{
-     font-family: 'Open Sans', sans-serif;
-     padding:0;
-     margin:0;
-     background: url(https://images.pexels.com/photos/169403/pexels-photo-169403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)no-repeat 0px 0px;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     background-size: cover;
-     background-attachment: fixed;
+
+footer {
+  text-align: center;
+  margin: 4em auto;
+  width: 100%;
 }
- body a{
-     transition:0.5s all;
-     -webkit-transition:0.5s all;
-     -moz-transition:0.5s all;
-     -o-transition:0.5s all;
-     -ms-transition:0.5s all;
-     font-weight:400;
+footer a {
+  text-decoration: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px dashed #333;
+  color: #333;
+  margin: 5px;
 }
- input[type="button"],input[type="submit"],input[type="text"],input[type="password"]{
-     transition:0.5s all;
-     -webkit-transition:0.5s all;
-     -moz-transition:0.5s all;
-     -o-transition:0.5s all;
-     -ms-transition:0.5s all;
-     font-family: 'Open Sans', sans-serif;
+footer a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
- h1,h2,h3,h4,h5,h6{
-     margin:0;
-     font-weight:400;
-     transition:0.5s all;
-     -webkit-transition:0.5s all;
-     -moz-transition:0.5s all;
-     -o-transition:0.5s all;
-     -ms-transition:0.5s all;
-     font-family: 'Josefin Sans', sans-serif;
+footer a .icons {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 20px;
 }
- .clear {
-     clear:both;
+
+.main-content {
+  margin: 4em auto;
+  max-width: 900px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
 }
- .text-center {
-     text-align:center;
+
+.id__wrapper {
+  display: grid;
+  width: 100%;
+  transition: width 0.2s ease-in-out;
+  margin: auto;
+  grid-gap: 15px;
+  padding: 15px;
+  background: rgba(76, 162, 205, 0.2);
+  border: 2px solid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "your-face name name" "your-face job country" "your-face twitter codepen" "your-face blood blood";
 }
- p{
-     margin:0;
+.id__wrapper > div {
+  transition: all 0.1s ease;
 }
- label{
-     margin:0;
+
+textarea::-webkit-scrollbar {
+  display: none;
 }
- img{
-     width:100%;
+
+.header {
+  grid-area: header;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 0;
+  font: 600 28px "Prompt";
 }
-/*--header--*/
- .agile-voltheader h1 {
-     font-size: 45px;
-     text-align: center;
-     letter-spacing: 2px;
-     color: #faf6f3;
-     padding: 1em 0 1em;
+.header span:nth-child(2) {
+  display: none;
 }
- .agile-voltsub {
-     width: 35%;
-     margin: 0 auto;
-     background: rgba(41, 41, 41, 0.52);
-     box-sizing: border-box;
-     padding: 2em;
+
+.your-face {
+  grid-area: your-face;
+  background: #fff;
+  border: 2px solid;
+  cursor: pointer;
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
 }
- .agile-voltsub h2 {
-     font-size: 35px;
-     font-weight: 600;
-     text-align: center;
-     text-transform: capitalize;
-     color:#fff;
-     letter-spacing: 2px;
-     padding: 0.2em 0.2em;
+.your-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+  position: relative;
+  visibility: hidden;
 }
- p {
-     font-size: 16px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     letter-spacing: 1px;
-     margin: 0;
-     padding: 1em 0 0.5em;
-     color: #e8ec19;
+.your-face .image-persuader {
+  position: absolute;
+  top: 40%;
+  text-align: center;
+  width: 70%;
+  left: 15%;
 }
- input[type="text"],input[type="password"],input[type="number"],input[type="email"],input[type="tel"],textarea {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     padding: 0.8em 0.5em 0.8em;
-     box-sizing:border-box;
-     width: 100%;
-     border: none;
-     outline: none;
-     background:rgba(255, 255, 255, 0.19);
-     color: #fff;
+.your-face input {
+  display: none;
 }
- select {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: center;
-     text-transform: capitalize;
-     padding: 1em 0 1em;
-     width: 100%;
-     margin: 1em 0 1em;
-     background:rgba(255, 255, 255, 0.19);
-     color: #fff;
-     letter-spacing: 2px;
-     border: 2px solid #5acae9;
+
+label {
+  font: 600 16px "Prompt";
+  margin-bottom: 2px;
+  display: block;
+  flex: 0 0 auto;
 }
- .agile-voltheader label {
-     color: #00e5ff;
+
+input.full, textarea.full {
+  font: 400 20px "Prompt";
+  border: none;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  border-bottom: 2px solid;
+  resize: none;
+  overflow: visible;
+  line-height: 1;
 }
- option {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     background: rgba(40, 37, 37, 0.5);
-     color: #fff;
-     border: 2px solid #9e2929;
-     letter-spacing: 2px;
+input.full:focus, textarea.full:focus {
+  outline: none;
 }
- .agile-days span.Monday {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     color: #fff;
-     letter-spacing: 1px;
-     padding: 0.5em 0;
+
+.name {
+  grid-area: name;
 }
- .agile-days span.Tuesday {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     color: #fff;
-     letter-spacing: 1px;
-     padding: 0.5em 0;
+
+.job {
+  grid-area: job;
 }
- .agile-days span.Wednesday {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: left;
-     text-transform: capitalize;
-     color: #fff;
-     letter-spacing: 1px;
-     padding: 0.5em 0;
+
+.country {
+  grid-area: country;
 }
- select {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: center;
-     text-transform: capitalize;
-     padding: 1em 0 1em;
-     width: 100%;
-     margin: 0em 0 1em;
-     box-sizing: border-box;
-     background: rgba(255, 255, 255, 0.29);
-     color: #fff;
-     letter-spacing: 1px;
-     outline:none;
-     border: none;
+
+.twitter {
+  grid-area: twitter;
 }
- .agile-from {
-     width: 47%;
-     float: left;
+
+.codepen {
+  grid-area: codepen;
 }
- .agile-to {
-     width: 47%;
-     float: left;
-     margin-left: 3%;
+
+.blood {
+  grid-area: blood;
 }
- input[type="submit"] {
-     font-size: 20px;
-     font-weight: 500;
-     text-align: center;
-     text-transform: capitalize;
-     letter-spacing: 2px;
-     background: #000000;
-     color: #fff;
-     border: none;
-     outline: none;
-     width: 45%;
-     margin: 2em auto 0;
-     display: block;
-     padding: 0.5em 0.5em;
-     cursor:pointer;
+
+.checkbox__wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
- input[type="submit"]:hover {
-     background: #FFEB3B;
-     transition: 0.5s ease-in;
-     border: 2px solid #ffffff;
-     color: black;
+.checkbox__wrapper .checkbox {
+  flex: 0 0 auto;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
 }
- ::-webkit-input-placeholder{
-     color:#fff;
+.checkbox__wrapper input {
+  visibility: hidden;
 }
- ::-moz-input-placeholder{
-     color:#fff;
+.checkbox__wrapper label {
+  position: relative;
+  padding-left: 5px;
+  cursor: pointer;
 }
- ::-ms-input-placeholder{
-     color:#fff;
+.checkbox__wrapper label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border: 2px solid;
+  left: -20px;
+  top: 2px;
 }
-/*--footer--*/
- footer {
-     font-size: 15px;
-     font-weight: 500;
-     text-align: center;
-     text-transform: capitalize;
-     letter-spacing: 2px;
-     color: #fff;
-     padding: 2em 0em 2em;
+.checkbox__wrapper input:checked + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background: #000;
+  left: -16px;
+  top: 6px;
 }
- footer a{
-     font-size: 15px;
-     font-weight: 500;
-     text-align: center;
-     text-transform: capitalize;
-     letter-spacing: 1px;
-     color: #e8ec19;
-     text-decoration:none;
+
+.deco {
+  position: absolute;
+  background: linear-gradient(to top left, rgba(0, 242, 96, 0.8), rgba(76, 162, 205, 0.8));
+  width: 1%;
+  height: 170px;
+  top: 20px;
+  right: -165px;
+  transform: rotate(55deg);
+  opacity: 0;
 }
- .agile-days span {
-     padding-bottom: 2em;
-     display: block;
+.deco:before {
+  content: "";
+  background: linear-gradient(to top right, rgba(0, 242, 96, 0.6), rgba(76, 162, 205, 0.9));
+  width: 1%;
+  height: 120px;
+  position: absolute;
+  transform: rotate(140deg);
+  bottom: 0px;
+  margin-left: -140px;
 }
- textarea {
-     min-height: 130px;
-     resize: none;
+
+.as-card {
+  box-shadow: none;
+  background: none;
+  pointer-events: none;
 }
-/*--/footer--*/
-/*--responsive--*/
- @media(max-width:1440px){
-     .agile-voltsub {
-         width: 45%;
-    }
+.as-card .header span:nth-child(1) {
+  display: none;
 }
- @media(max-width:1366px){
-     .agile-voltsub {
-         width: 50%;
-    }
+.as-card .header span:nth-child(2) {
+  display: block;
 }
- @media(max-width:1280px){
-     .agile-voltsub {
-         width: 55%;
-    }
+.as-card .deco,
+.as-card .deco:before {
+  opacity: 1;
+  width: 120%;
+  animation: 0.8s deco-piece forwards;
 }
- @media(max-width:1080px){
-     .agile-voltsub {
-         width: 60%;
-    }
+.as-card .id__wrapper {
+  width: 325px;
+  overflow: hidden;
+  margin: 2em auto 0;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 85px 25px 65px;
+  grid-gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 60px repeat(4, auto);
+  grid-template-areas: "your-face your-face" "name name" "job job" "country country" "blood blood" "twitter codepen";
 }
- @media(max-width:1050px){
+.as-card .id__wrapper:before {
+  content: "Attendee";
+  background: linear-gradient(to top right, #4ca2cd, #00f260);
+  position: absolute;
+  bottom: -0.5px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  letter-spacing: 2px;
+  font: 600 20px "Prompt";
+  text-align: center;
+  color: #fff;
 }
- @media(max-width:1024px){
+.as-card .id__wrapper:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 80px;
+  height: 12px;
+  margin-left: -40px;
+  background: #f8f8f8;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
 }
- @media(max-width:991px){
+.as-card .id__wrapper input.full, .as-card .id__wrapper textarea.full {
+  background: transparent;
+  border: none;
+  padding: 0;
 }
- @media(max-width:900px){
-     .agile-voltsub {
-         width: 70%;
-    }
+.as-card .id__wrapper textarea.full {
+  line-height: 0.9;
+  height: 63px;
 }
- @media(max-width:800px){
-     .agile-voltsub {
-         width: 75%;
-    }
+.as-card .id__wrapper .checkbox__wrapper {
+  margin: 5px;
 }
- @media(max-width:768px){
-     .agile-voltsub {
-         width: 80%;
-    }
+.as-card .id__wrapper .checkbox__wrapper label {
+  padding: 0;
+  font-size: 14px;
+  color: #4ca2cd;
+  margin: 0;
+  padding-right: 10px;
 }
- @media(max-width:736px){
-     footer {
-         line-height: 26px;
-    }
+.as-card .id__wrapper .checkbox__wrapper label:before, .as-card .id__wrapper .checkbox__wrapper label:after {
+  content: none;
 }
- @media(max-width:667px){
-     .agile-voltheader h1 {
-         font-size: 40px;
-    }
+.as-card .id__wrapper .checkbox__wrapper input {
+  display: none;
 }
- @media(max-width:600px){
-     .agile-voltsub {
-         width: 90%;
-    }
-     .agile-voltheader h1 {
-         font-size: 36px;
-    }
-     footer {
-         font-size: 15px;
-    }
-     .agile-voltsub h2 {
-         font-size: 30px;
-    }
+.as-card .id__wrapper .checkbox {
+  padding-right: 0;
 }
- @media(max-width:568px){
-     .agile-voltsub {
-         width: 92%;
-    }
+.as-card .id__wrapper .checkbox input:not(:checked),
+.as-card .id__wrapper .checkbox input:not(:checked) + label {
+  display: none;
+  padding: 0;
 }
- @media(max-width:480px){
-     .agile-voltheader h1 {
-         font-size: 28px;
-    }
+.as-card .your-face {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  border: 4px solid #4ca2cd;
 }
- @media(max-width:414px){
-     .agile-voltheader h1 {
-         line-height: 43px;
-         padding: 1em 0 0.5em;
-    }
-     .agile-voltsub h2 {
-         font-size: 26px;
-    }
-     p {
-         font-size: 15px;
-    }
-     footer {
-         font-size: 14px;
-         letter-spacing:1px;
-    }
-     input[type="submit"] {
-         margin: 1em auto 0;
-    }
+.as-card .your-face img {
+  border-radius: 50%;
 }
- @media(max-width:384px){
+.as-card .your-face .image-persuader {
+  display: none;
 }
- @media(max-width:375px){
+.as-card .name label:not(.label-check),
+.as-card .job label:not(.label-check),
+.as-card .country label:not(.label-check),
+.as-card .blood label:not(.label-check) {
+  display: none;
 }
- @media(max-width:320px){
-     .agile-voltsub h2 {
-         font-size: 20px;
-    }
-     .agile-voltsub {
-         width: 94%;
-         padding: 1.5em;
-    }
-     footer {
-         font-size: 13px;
-    }
-     .agile-from {
-         width: 100%;
-    }
-     .agile-to {
-         width: 100%;
-         margin-left: 1%;
-    }
-     .agile-voltheader h1 {
-         line-height: 35px;
-         padding: 0.8em 0 0.8em;
-    }
-     footer {
-         line-height: 22px;
-         padding: 1em 0em 1em;
-    }
-     input[type="submit"] {
-         font-size: 17px;
-    }
-     footer a {
-         font-size: 13px;
-    }
+.as-card .name textarea {
+  font: 600 32px "Prompt";
+  margin: 5px 5px 0;
+  color: #374e71;
+  position: relative;
 }
-/*--/responsive--*/
- 
+.as-card .job input {
+  color: #4ca2cd;
+  font: 600 20px "Prompt";
+  margin: 0 5px;
+}
+.as-card .country input {
+  color: #4ca2cd;
+  font: 400 18px "Prompt";
+  margin: -15px 5px 10px;
+}
+.as-card .twitter,
+.as-card .codepen {
+  text-align: center;
+  margin: 10px 0;
+}
+.as-card .twitter label,
+.as-card .codepen label {
+  font: 600 12px "Prompt";
+  color: #999;
+  margin: 0 0 -2px;
+}
+.as-card .twitter input,
+.as-card .codepen input {
+  font: 400 16px "Prompt";
+  color: #374e71;
+  text-align: center;
+}
+
+.js-switch {
+  cursor: pointer;
+  margin: 0 0 3em;
+  display: inline-block;
+  padding: 0.6em 1.5em;
+  color: #374e71;
+  border: 2px solid;
+  font: 20px "Prompt";
+  position: relative;
+  top: 0;
+  transition: 0.1s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.js-switch:hover {
+  top: -3px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes deco-piece {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 120%;
+  }
+}
